@@ -125,7 +125,7 @@ class MainNet(nn.Module):
       x = self.incept2(x) 
       # 마지막으로 self.incept2()에 위에서 과정을 거친 x 대입
       x = x.view(in_size,-1)
-      # in_channel의 값만 그대로 두고 나머지 값들은 -1로 펴버림
+      # batch_size의 값만 그대로 두고 나머지 값들은 -1로 펴버림
       # batch_size * channel * width * height였다면
       # batch_size, (channel * width * height)의 형태로
       x = self.fc(x)
